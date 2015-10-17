@@ -1,0 +1,14 @@
+{
+  "name": "engiewaste",
+  "version": "1.0.0",
+  "description": "a clock that shows how much money you're wasting by having engineers in a meeting",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
+}
