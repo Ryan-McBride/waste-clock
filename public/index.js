@@ -1,20 +1,28 @@
 (function(){
   'use strict';
   angular
-    .module('router', ['ngRoute'])
+    .module('wasteClock', [
+      'wasteClock.clock',
+      'wasteClock.form',
+      'ngRoute'])
+    .factory('saleng', function(){
+      return {salary: 1000000,
+      engineers: 0,
+      mMeeting: false,
+      };
+    })
     .config(function($routeProvider) {
       $routeProvider
         .when('/', {
           controller: 'FormController as form',
-          templateUrl: 'form.html'
+          templateUrl: 'public/form/form.html'
         })
         .when('/clock', {
           controller: 'ClockController as clock',
-          templateUrl: 'clock.html'
+          templateUrl: 'public/clock/clock.html'
         })
         .otherwise({
           redirectTo: '/'
         });
       });
 })();
-

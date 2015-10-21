@@ -13,7 +13,7 @@ var port = process.env.PORT || '3000';
 //   connecting the client and server                     //
 //   allows for CORS (cross origin resource sharing)      //
 //========================================================//
-app.use(favicon(__dirname + '/favicon.png'));
+app.use(favicon(__dirname + '/public/favicon.png'));
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -24,7 +24,7 @@ app.use(function(req, res, next) {
 app.use(express.static(path.normalize(__dirname + '/')));
 
 app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname + '/index.html'));
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
 //========================================================//
