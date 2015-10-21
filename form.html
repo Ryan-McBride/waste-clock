@@ -1,0 +1,9 @@
+<div ng-model="wasteClock.form">
+  <form>
+    <input type="number" id="engineers" min=0 required ng-model="saleng.engineers" placeholder="engineers in this meeting">
+    <br>
+    <input type="number" id="salary" min=0 ng-model="saleng.salary" placeholder="average engineer's salary">
+    <br>
+    <button type="submit" id="sub" ng-click="form.set(saleng)">submit</button>
+  </form>
+</div>

@@ -1,13 +1,21 @@
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0-alpha1/jquery.min.js"></script>
-<script src="app.js"></script>
-<link rel="stylesheet" href="styles.css">
+<!doctype html>
+<html ng-app="wasteClock">
+  <head>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-resource.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.7/angular-route.min.js"></script>
+    <script src="index.js"></script>
+    <script src="clock.js"></script>
+    <script src="form.js"></script>
+  </head>
 <body>
   <header>
     <a href="/">
       ENGINEERING MONEY THROWN AWAY
     </a>
   </header>
-  <center>
+  <center ng-view>
     <form>
       <input type="number" id="engineers" min=0 required placeholder="engineers in this meeting">
       </br>
@@ -16,4 +24,4 @@
       <button type="submit" id="sub">submit</button>
     </form>
   </center>
-</body>
+</html>

@@ -1,15 +1,7 @@
 (function(){
   'use strict';
   angular
-    .module('wasteClock', [
-      'wasteClock.clock',
-      'wasteClock.form',
-      'ngRoute'])
-    .factory('saleng', function(){
-      return {salary: 1000000,
-      engineers: 5,
-      total: 0};
-    })
+    .module('router', ['ngRoute'])
     .config(function($routeProvider) {
       $routeProvider
         .when('/', {
@@ -25,3 +17,4 @@
         });
       });
 })();
+

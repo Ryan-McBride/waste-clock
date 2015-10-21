@@ -1,22 +1,36 @@
-$(document).ready(function(){
-  var eng = 0;
-  var sal = 0;
-  $('form').submit(function(event){
-    event.preventDefault();
-    eng = $('#engineers').val();
-    sal = $('#salary').val();
-    startClock(eng, sal);
-  });  
+// server.js
+"use strict";
+
+var express = require('express');
+var favicon = require('serve-favicon');
+var app = express();
+var path = require('path');
+
+
+var port = process.env.PORT || '3000';
+
+//========================================================//
+//   connecting the client and server                     //
+//   allows for CORS (cross origin resource sharing)      //
+//========================================================//
+app.use(favicon(__dirname + '/favicon.png'));
+
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next();
 });
 
-var startClock = function(engie, salary){
-  salary = salary || 100000;
-  var start=0;
-  var perSec = (parseInt(engie) * parseInt(salary)) / 7488000;
-  
-  $('center').html('<div class="time">$0.00</div>');
+app.use(express.static(path.normalize(__dirname + '/')));
 
-  setInterval(function(){
-    $('.time').text('$' + (start += perSec).toFixed(2));
-  }, 1000);
-};
+app.get('/', function(req, res) {
+    res.sendFile(path.join(__dirname + '/index.html'));
+});
+
+//========================================================//
+//   Calling the server                                   //
+//========================================================//
+var server = app.listen(port, function() {
+  var host = server.address().address;
+  console.log('MyDeploymentApp is listening at http://%s:%s -- %s', host, port);
+});

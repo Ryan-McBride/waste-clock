@@ -4,7 +4,7 @@
   "description": "a clock that shows how much money you're wasting by having engineers in a meeting",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node app.js"
   },
   "author": "",
   "license": "ISC",
