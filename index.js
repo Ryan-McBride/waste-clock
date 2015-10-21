@@ -7,8 +7,9 @@
       'ngRoute'])
     .factory('saleng', function(){
       return {salary: 1000000,
-      engineers: 5,
-      total: 0};
+      engineers: 0,
+      mMeeting: false,
+      };
     })
     .config(function($routeProvider) {
       $routeProvider

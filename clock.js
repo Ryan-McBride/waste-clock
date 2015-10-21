@@ -4,7 +4,11 @@
     .controller('ClockController', function(saleng, $interval){
       var clock = this;
       var curr = 0;
-      var perSec = (parseInt(saleng.engineers) * parseInt(saleng.salary)) / 7488000;
+      var mMeeting = 1;
+      if(saleng.mMeeting){
+        mMeeting = 2;
+      }
+      var perSec = (parseInt(saleng.engineers) * parseInt(saleng.salary)) / 7488000 * mMeeting;
       clock.time = 0;
 
       $interval(function(){
