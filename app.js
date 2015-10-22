@@ -1,6 +1,5 @@
 // server.js
-"use strict";
-
+(function(){"use strict";})();
 var express = require('express');
 var favicon = require('serve-favicon');
 var app = express();
