@@ -8,10 +8,6 @@ var path = require('path');
 
 var port = process.env.PORT || '3000';
 
-//========================================================//
-//   connecting the client and server                     //
-//   allows for CORS (cross origin resource sharing)      //
-//========================================================//
 app.use(favicon(__dirname + '/public/favicon.png'));
 
 app.use(function(req, res, next) {
@@ -26,10 +22,7 @@ app.get('/', function(req, res) {
     res.sendFile(path.join(__dirname + '/public/index.html'));
 });
 
-//========================================================//
-//   Calling the server                                   //
-//========================================================//
 var server = app.listen(port, function() {
   var host = server.address().address;
-  console.log('MyDeploymentApp is listening at http://%s:%s -- %s', host, port);
+  console.log('waste-clock is listening at http://%s:%s -- %s', host, port);
 });
