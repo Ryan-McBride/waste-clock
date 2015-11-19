@@ -5,7 +5,7 @@
       var session = this;
       session.set = function(info){
         saleng.engineers = info.engineers;
-        saleng.salary = info.salary;
+        saleng.salary = info.salary || 100000;
         saleng.mMeeting = info.mMeeting;
         $location.path('/clock');
       };
